@@ -26,10 +26,12 @@
     "electron": "electron .",
     "electron-start": "node public/start-react",
     "react-start": "BROWSER=none react-scripts start",
-    "pack": "electron-builder --dir",
+    "pack-dmg": "electron-builder --dir --mac dmg",
+    "pack-mas": "electron-builder --dir --mac mas",
     "pack-win": "electron-builder --dir --win",
-    "dist": "npm run build && electron-builder",
-    "dist-win": "npm run build && electron-builder --win",
+    "dmg": "npm run build && electron-builder --mac dmg",
+    "mas": "npm run build && electron-builder --mac mas",
+    "win": "npm run build && electron-builder --win",
     "postinstall": "install-app-deps"
   },
   "homepage": "./",
@@ -47,11 +49,13 @@
     "appId": "com.kyaroru.bear-sweeper",
     "productName": "BearSweeper",
     "mac": {
-      "category": "public.app-category.games"
-    },
-    "win": {
-      "icon": "public/icon.png",
-      "target": "portable"
+      "category": "public.app-category.games",
+      "target": [
+        "dmg",
+        "mas"
+      ],
+      "type": "distribution",
+      "identity": "Chiew Carol"
     },
     "dmg": {
       "contents": [
@@ -66,6 +70,13 @@
           "path": "/Applications"
         }
       ]
+    },
+    "mas": {
+      "provisioningProfile": "public/BearSweeper.provisionprofile"
+    },
+    "win": {
+      "icon": "public/icon.png",
+      "target": "portable"
     },
     "directories": {
       "buildResources": "public"
