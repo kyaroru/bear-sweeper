@@ -1,18 +1,39 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
+  "name": "bear-sweeper",
+  "author": "Chiew Carol",
+  "description": "watch out for bear!",
+  "website": "http://www.kyaroru.com/apps",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-scripts": "2.1.2"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "electron": "^4.0.0",
+    "electron-builder": "^20.38.4",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.12.0"
   },
+  "scripts": {
+    "start": "nf start -p 3000",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "electron": "electron .",
+    "electron-start": "node public/start-react",
+    "react-start": "BROWSER=none react-scripts start",
+    "pack": "electron-builder --dir",
+    "pack-win": "electron-builder --dir --win",
+    "dist": "npm run build && electron-builder",
+    "dist-win": "npm run build && electron-builder --win",
+    "postinstall": "install-app-deps"
+  },
+  "homepage": "./",
+  "main": "public/electron.js",
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -21,5 +42,33 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "build": {
+    "appId": "com.kyaroru.bear-sweeper",
+    "productName": "BearSweeper",
+    "mac": {
+      "category": "public.app-category.games"
+    },
+    "win": {
+      "icon": "public/icon.png",
+      "target": "portable"
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 150,
+          "y": 220
+        },
+        {
+          "x": 400,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "directories": {
+      "buildResources": "public"
+    }
+  }
 }
