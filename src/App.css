@@ -1,13 +1,14 @@
-.App {
+
+.app {
   text-align: center;
 }
 
-.App-logo {
+.app-logo {
   animation: App-logo-spin infinite 2s linear;
   height: 40vmin;
 }
 
-.App-header {
+.app-content {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -18,8 +19,81 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.game-content {
+  background-color: #fdfd96;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.app-link {
+  color: #b2cefe;
+  text-decoration: none;
+  border: 1px solid #b2cefe;
+  border-radius: 5px;
+  padding: 10px;
+  min-width: 100px;
+}
+
+.app-link:hover {
+  border: 1px solid #fea3aa;
+  color: #fea3aa;
+}
+
+.app-button {
+  border: 1px solid #fea3aa;
+  border-radius: 5px;
+  padding: 10px;
+  min-width: 100px;
+}
+.app-button .app-button-title {
+  color: #fea3aa;
+  text-decoration: none;
+}
+.app-button:hover {
+  border-color: #b2cefe;
+}
+.app-button .app-button-title:hover {
+  color: #b2cefe;
+}
+
+.margin-top {
+  margin-top: 10px;
+}
+
+.google-icon {
+  width: 7.4rem;
+  height: auto;
+  /* border: 1px solid white; */
+}
+
+.appstore-icon {
+  width: 6rem;
+  height: auto;
+  /* border: 1px solid white; */
+  padding: 5px 0px;
+}
+
+.copyright {
+  font-size: 14px;
+  margin: 20px;
+}
+
+.about {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  max-width: 200px;
+  height: auto;
+  margin: 20px 0px;
 }
 
 @keyframes App-logo-spin {
