@@ -7,6 +7,9 @@ Welcome, this game is originally build using React Native & now porting to Elect
 - This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 
+## Demo
+![Demo](http://g.recordit.co/mB6Us4bzn1.gif)
+
 ## Prerequisite
 - Install Foreman
 ```
