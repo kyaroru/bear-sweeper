@@ -1,7 +1,7 @@
 ## BearSweeper
 ![Brownie](./src/Brownie.svg)
 
-Welcome, this game is originally build using React Native & now porting to Electron + ReactJS
+Welcome, this game was originally built using React Native & now porting to Electron + ReactJS
 
 - Link to Original Repo: [BearSweeper](https://github.com/kyaroru/BearSweeper)
 - This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
