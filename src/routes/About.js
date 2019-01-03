@@ -37,7 +37,7 @@ const Difficulty = () => (
       </div>
     </div>
     <div className="copyright">
-      © 2018 Chiew Carol
+      © {new Date().getFullYear()} Chiew Carol
     </div>
   </header>
 );

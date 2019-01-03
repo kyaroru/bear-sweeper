@@ -41,7 +41,8 @@
     "dmg": "npm run build && electron-builder --mac dmg",
     "mas": "npm run build && electron-builder --mac mas",
     "mas-dev": "npm run build && electron-builder --mac mas-dev",
-    "win": "npm run build && electron-builder --win",
+    "win": "npm run build && electron-builder --win portable",
+    "appx": "npm run build && electron-builder --win appx",
     "postinstall": "install-app-deps"
   },
   "homepage": "./",
@@ -87,7 +88,17 @@
     },
     "win": {
       "icon": "public/icon.png",
-      "target": "portable"
+      "target": [
+        "portable",
+        "appx"
+      ]
+    },
+    "appx": {
+      "identityName": "1982ChiewCarol.BearSweeper",
+      "applicationId": "ChiewCarol.BearSweeper",
+      "displayName": "BearSweeper",
+      "publisher": "CN=79AD49FD-31EB-44A2-B937-7D1077001BC3",
+      "publisherDisplayName": "Chiew Carol"
     },
     "directories": {
       "buildResources": "public"
