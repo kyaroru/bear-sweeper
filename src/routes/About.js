@@ -35,7 +35,7 @@ const Difficulty = () => (
         </a>
       </div>}
       {(process && process.platform === 'win32' || typeof process === 'undefined') &&
-        <div>And it is now ported to ElectronJS :p</div>
+        <div>And it is now ported to ReactJS & ElectronJS :p</div>
       }
       <div style={styles.backButton}>
         <Link to="/" style={styles.link}>⬅ Back</Link>

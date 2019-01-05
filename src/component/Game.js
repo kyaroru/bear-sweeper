@@ -11,7 +11,8 @@ if (screenElectron) {
   var mainScreen = screenElectron.getPrimaryDisplay();
   var dimensions = mainScreen.size;
 }
-var DEFAULT_CONTAINER_SIZE = dimensions ? dimensions.width * 0.3 : window.screen.availWidth *0.3;
+var isMobile = typeof window.orientation !== 'undefined';
+var DEFAULT_CONTAINER_SIZE = dimensions ? dimensions.width * 0.3 : isMobile ? window.screen.availWidth * 0.9 : window.screen.availWidth * 0.3;
 
 const styles = {
   container: {
@@ -78,7 +79,7 @@ class Game extends Component {
   }
 
   getBoardSize = () => {
-  var containerSize = dimensions ? dimensions.width * 0.3 : window.screen.availWidth *0.3;
+  var containerSize = dimensions ? dimensions.width * 0.3 : isMobile ? window.screen.availWidth * 0.9 : window.screen.availWidth * 0.3;
 
     return {
       width: containerSize,
