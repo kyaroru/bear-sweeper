@@ -35,6 +35,7 @@
     "electron": "electron .",
     "electron-start": "node public/start-react",
     "react-start": "BROWSER=none react-scripts start",
+    "start-web": "react-scripts start",
     "pack-dmg": "electron-builder --dir --mac dmg",
     "pack-mas": "electron-builder --dir --mac mas",
     "pack-win": "electron-builder --dir --win",

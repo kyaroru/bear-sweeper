@@ -24,7 +24,9 @@
     -->
     <title>BearSweeper</title>
     <script>
-      var electron = require('electron');
+      if(window.process && window.process.platform) {
+        var electron = require('electron');
+      }
     </script>
   </head>
   <body>

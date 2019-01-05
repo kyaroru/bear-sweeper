@@ -20,10 +20,16 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   onPress: () => {
     dispatch(sweep(ownProps.id));
   },
-  flagTile: () => {
+  flagTile: (e) => {
+    if (e && e.preventDefault) {
+      e.preventDefault();
+    }
     dispatch(flag(ownProps.id));
   },
-  unFlagTile: () => {
+  unFlagTile: (e) => {
+    if (e && e.preventDefault) {
+      e.preventDefault();
+    }
     dispatch(unFlag(ownProps.id));
   },
 });

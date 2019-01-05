@@ -26,7 +26,7 @@ const Difficulty = () => (
         BearSweeper is originally build in React Native!
       </div>
       <img className="icon" alt="brownie" src={icon} />
-      {process.platform !=='win32' && <div>
+      {process && process.platform !=='win32' && <div>
         <a target="_blank" rel="noopener noreferrer" href="https://itunes.apple.com/us/app/bearsweeper/id1447809603?ls=1&mt=8">
           <img className="appstore-icon" alt="appstore" src={appstore} />
         </a>
@@ -34,7 +34,7 @@ const Difficulty = () => (
           <img className="google-icon"  alt="googleplay" src={googleplay} />
         </a>
       </div>}
-      {process.platform === 'win32' &&
+      {(process && process.platform === 'win32' || typeof process === 'undefined') &&
         <div>And it is now ported to ElectronJS :p</div>
       }
       <div style={styles.backButton}>

@@ -6,9 +6,12 @@ import * as Colors from '../themes/colors';
 import Timer from '../container/Timer';
 import Tile from '../container/Tile';
 
-var screenElectron = window.electron.screen;
-var mainScreen = screenElectron.getPrimaryDisplay();
-var dimensions = mainScreen.size;
+var screenElectron = window.electron && window.electron.screen;
+if (screenElectron) {
+  var mainScreen = screenElectron.getPrimaryDisplay();
+  var dimensions = mainScreen.size;
+}
+var DEFAULT_CONTAINER_SIZE = dimensions ? dimensions.width * 0.3 : window.screen.availWidth *0.3;
 
 const styles = {
   container: {
@@ -25,7 +28,7 @@ const styles = {
     justifyContent: 'space-around',
     alignItems: 'center',
     padding: 10,
-    width: dimensions.width * 0.3,
+    width: DEFAULT_CONTAINER_SIZE,
     marginTop: 30,
   },
   headerLeft: {
@@ -44,8 +47,8 @@ const styles = {
     flexDirection: 'row',
     display: 'flex',
     padding: 10,
-    width: dimensions.width * 0.3,
-    height: dimensions.width * 0.3,
+    width: DEFAULT_CONTAINER_SIZE,
+    heiight: DEFAULT_CONTAINER_SIZE,
   },
   column: {
     display: 'flex',
@@ -72,6 +75,15 @@ class Game extends Component {
     newGame: PropTypes.func.isRequired,
     numberOfFlag: PropTypes.number.isRequired,
     numberOfMine: PropTypes.number.isRequired,
+  }
+
+  getBoardSize = () => {
+  var containerSize = dimensions ? dimensions.width * 0.3 : window.screen.availWidth *0.3;
+
+    return {
+      width: containerSize,
+      height: containerSize,
+    };
   }
 
   render() {
@@ -101,7 +113,7 @@ class Game extends Component {
             {numberOfMine.toString()}
           </div>
         </div>
-        <div style={styles.board}>
+        <div style={{...styles.board, ...this.getBoardSize()}}>
           {
             board.map(row => {
               return (
