@@ -17,15 +17,15 @@
     "redux-actions": "^2.6.4",
     "redux-logger": "^3.0.6",
     "redux-persist": "^5.10.0",
-    "redux-saga": "^0.16.2"
-  },
-  "devDependencies": {
-    "electron": "^4.0.0",
-    "electron-builder": "^20.38.4",
+    "redux-saga": "^0.16.2",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.12.0"
+  },
+  "devDependencies": {
+    "electron": "^4.0.0",
+    "electron-builder": "^20.38.4"
   },
   "scripts": {
     "start-app": "nf start -p 3000",
