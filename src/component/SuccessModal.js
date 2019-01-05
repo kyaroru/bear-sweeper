@@ -11,12 +11,12 @@ import Modal from 'react-modal';
 const styles = {
   content : {
     top: '25%',
-    left: '25%',
-    right: 'auto',
+    margin: '0 auto',
     bottom: 'auto',
     width: '50%',
     height: '25%',
-    marginRight: '-25%',
+    borderWidth: 1,
+    borderStyle: 'solid',
   },
   innerModal: {
     borderRadius: 10,
