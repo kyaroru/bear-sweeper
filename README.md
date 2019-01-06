@@ -8,10 +8,10 @@ Welcome, this game was originally built using React Native & now porting to Elec
 
 ## Demo for ReactJS Website
 Link to Demo Website: [BearSweeper](https://bearsweeper.kyaroru.com)
-![Demo Website](http://g.recordit.co/KzI6Ei1sCo.gif)
+![Demo Website](http://g.recordit.co/CXfIGuw4gq.gif)
 
 ## Demo for Electron App
-![Demo App](http://g.recordit.co/mB6Us4bzn1.gif)
+![Demo App](http://g.recordit.co/0DQ6WqLwKJ.gif)
 
 ## Prerequisite
 - Install Foreman
