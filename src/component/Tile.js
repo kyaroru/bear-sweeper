@@ -18,6 +18,7 @@ const styles = {
     flex: 1,
     width: '60%',
     height: 'auto',
+    zIndex: 2,
   },
   flag: {
     textAlign: 'center',
@@ -100,9 +101,11 @@ class Tile extends Component {
       }
       return { backgroundColor: Colors.sweep };
     };
+
     return (
       <div
-        style={{ ...styles.button, ...backgroundColor()}}
+        className={this.props.isHint && 'blink'}
+        style={{ ...styles.button, ...backgroundColor() }}
         onClick={this.props.isLose || this.props.isWon ? () => {} : (this.props.flagued ? null : this.props.onPress)}
         onContextMenu={this.props.flagued ? this.props.unFlagTile : this.props.flagTile}
         disabled={this.props.isLose || this.props.isWon}

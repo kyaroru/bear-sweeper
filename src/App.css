@@ -96,6 +96,20 @@
   margin: 20px 0px;
 }
 
+.blink {
+  animation: blinker 0.8s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+.ReactModal__Overlay {
+  z-index: 2;
+}
+
 @keyframes App-logo-spin {
   0%   {transform: rotate(0deg);}
   25%  {transform: rotate(10deg);}

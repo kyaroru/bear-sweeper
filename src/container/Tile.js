@@ -14,6 +14,7 @@ const mapStateToProps = (state, ownProps) => ({
   isLose: state.game.isLose,
   sweeped: state.game.board[ownProps.id.x][ownProps.id.y].sweeped,
   flagued: state.game.board[ownProps.id.x][ownProps.id.y].flagued,
+  isHint: state.game.board[ownProps.id.x][ownProps.id.y].isHint,
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

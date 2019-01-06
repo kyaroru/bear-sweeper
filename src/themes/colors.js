@@ -6,6 +6,7 @@ export const white = 'white';
 export const nearWhite = '#eeeeee';
 export const gray = '#aaa';
 export const modalBg = 'rgba(0, 0, 0, 0.5)';
+export const transparent = 'transparent';
 
 // Mine
 export const mine = '#fea3aa';

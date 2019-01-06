@@ -9,6 +9,8 @@ import {
   UNFLAG,
   CHECK,
   NEW_GAME,
+  SET_HINT,
+  CLEAR_HINTS,
 } from '../action/Game';
 
 const setNumbers = (board) => {
@@ -106,6 +108,18 @@ const gameReducer = (state = initialState, action) => {
         ...state,
         isWon: isWin(state.board),
         isLose: isLose(state.board),
+      };
+    case SET_HINT:
+      return {
+        ...state,
+        isHinted: true,
+        board: boardReducer(state.board, action),
+      };
+    case CLEAR_HINTS:
+      return {
+        ...state,
+        isHinted: false,
+        board: boardReducer(state.board, action),
       };
     case UNFLAG:
       return {

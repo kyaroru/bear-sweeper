@@ -4,20 +4,21 @@ import React, { Component } from 'react';
 
 import Button from './common/Button';
 import PropTypes from 'prop-types';
-import { hideModal } from '../action/Modal';
+import { hideInfoModal } from '../action/Modal';
 import Modal from 'react-modal';
+import { isMobile } from '../utils/size';
 
 const styles = {
   content : {
     top: '25%',
     margin: '0 auto',
     bottom: 'auto',
-    width: '50%',
-    height: '25%',
+    width: isMobile ? '70%' : '50%',
+    height: isMobile ? '35%' : '30%',
     borderWidth: 1,
     borderStyle: 'solid',
-    justifyContent: 'center',
     alignItems: 'center',
+    justifyContent: 'center',
     display: 'flex',
     flexDirection: 'column',
   },
@@ -39,7 +40,6 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     paddingTop: 10,
-    alignSelf: 'center',
   },
   modalButton: {
     textAlign: 'center',
@@ -54,8 +54,7 @@ class SuccessModal extends Component {
   }
 
   render() {
-    const dismiss = () => this.props.dispatch(hideModal());
-    const { timerCount } = this.props;
+    const dismiss = () => this.props.dispatch(hideInfoModal());
     return (
       <Modal
         transparent
@@ -67,13 +66,16 @@ class SuccessModal extends Component {
         style={styles}
       >
         <div style={styles.modalHeader}>
-          <div style={styles.modalTitle}>Congratulations</div>
+          <div style={styles.modalTitle}>Instructions</div>
         </div>
         <div style={styles.modalContent}>
-          <div style={styles.label}>{`You\'ve won the game in just ${timerCount} seconds!`}</div>
-          <div style={styles.label}>To start again, click the emoji :p</div>
+          <div style={styles.label}>- Click any tile to start game</div>
+          <div style={styles.label}>- Right click a tile to flag/unflag</div>
+          <div style={styles.label}>- To get hint, click the hint icon</div>
+          <div style={styles.label}>- Click number to reveal neighbour if flag is made</div>
+          <div style={styles.label}>- To restart game, press the emoji face :p</div>
           <div style={styles.modalButton}>
-            <Button title="Sure!" onPress={dismiss} />
+            <Button title="Noted!" onPress={dismiss} />
           </div>
         </div>
       </Modal>

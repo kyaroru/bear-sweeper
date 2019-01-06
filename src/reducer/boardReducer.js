@@ -4,6 +4,8 @@ import {
   SWEEP,
   FLAG,
   UNFLAG,
+  SET_HINT,
+  CLEAR_HINTS,
 } from '../action/Game';
 
 const initialState = {};
@@ -103,6 +105,22 @@ const flag = (board, id) => {
   return board;
 };
 
+const setHint = (board, id) => {
+  board[id.x][id.y] = { ...board[id.x][id.y], isHint: true } // eslint-disable-line
+  return board;
+};
+
+const clearHints = (board) => {
+  board.forEach(row => {
+    row.forEach(column => {
+      if (column.isHint) {
+        delete column.isHint;
+      }
+    })
+  })
+  return board;
+};
+
 const boardReducer = (state = initialState, action) => {
   switch (action.type) {
     case UNFLAG:
@@ -111,6 +129,10 @@ const boardReducer = (state = initialState, action) => {
       return flag(state, action.payload);
     case SWEEP:
       return reveal(state, action.payload);
+    case SET_HINT:
+      return setHint(state, action.payload);
+    case CLEAR_HINTS:
+      return clearHints(state);
     default:
       return state;
   }

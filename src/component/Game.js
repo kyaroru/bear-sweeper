@@ -61,6 +61,19 @@ const styles = {
   face: {
     fontSize: 40,
   },
+  button: {
+    borderWidth: 1,
+    borderStyle: 'solid',
+    borderRadius: 10,
+    borderColor: Colors.unsweep,
+    width: 30,
+    height: 30,
+    padding: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
+    display: 'flex',
+    textAlign: 'center',
+  }
 };
 
 class Game extends Component {
@@ -82,6 +95,22 @@ class Game extends Component {
     };
   }
 
+  getHintButton = () => {
+    const { isHinted, isLose, isWon } = this.props;
+    if (isHinted || isLose || isWon) {
+      return {
+        position: 'absolute',
+        backgroundColor: Colors.modalBg,
+        width: 30,
+        height: 30,
+        zIndex: 1,
+        padding: 5,
+        borderRadius: 10,
+      };
+    }
+    return null;
+  }
+
   render() {
     const {
       isLose, newGame, isWon, numberOfMine, numberOfFlag, board,
@@ -97,6 +126,9 @@ class Game extends Component {
     return (
       <div style={styles.container}>
         <div style={styles.header}>
+          <div style={styles.button} onClick={this.props.onInfoClick}>
+            <span style={{ padding: 5, lineHeight: 25 }}>ℹ️</span>
+          </div>
           <div style={styles.headerLeft}>
             <Timer isWon={isWon} isLose={isLose} />
           </div>
@@ -107,6 +139,10 @@ class Game extends Component {
 /
             {' '}
             {numberOfMine.toString()}
+          </div>
+          <div style={styles.button} disabled={this.props.isHinted} onClick={this.props.isHinted || this.props.isLose || this.props.isWon ? () => {} : this.props.onHintClick}>
+            <span style={{ padding: 5, lineHeight: 25 }}>💡</span>
+            <div style={{ ...this.getHintButton() }} />
           </div>
         </div>
         <div style={{...styles.board, ...this.getBoardSize()}}>

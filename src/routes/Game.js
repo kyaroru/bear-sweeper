@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Game from '../container/Game';
 import SuccessModal from '../container/SuccessModal';
 import * as Colors from '../themes/colors';
+import InfoModal from '../container/InfoModal';
 
 const styles = {
   flex: {
@@ -32,6 +33,7 @@ const Difficulty = ({ history }) => (
       <Link to="/difficulty/" style={styles.link}>⬅ Back</Link>
     </div>
     <SuccessModal />
+    <InfoModal />
   </header>
 );
 

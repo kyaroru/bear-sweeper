@@ -1,6 +1,4 @@
-import {
-  take, put, select,
-} from 'redux-saga/effects';
+import { takeLatest, all, fork, put, select } from 'redux-saga/effects';
 
 import {
   showModal,
@@ -15,6 +13,7 @@ import {
 import {
   SWEEP,
   check,
+  clearHints,
 } from '../action/Game';
 
 import {
@@ -24,22 +23,29 @@ import {
 } from '../reducer';
 
 function* sweep() {
-  while (yield take(SWEEP)) {
-    yield put(check());
-    const state = yield select();
-    if (getIsWon(state)) {
-      yield put(showModal());
-    }
-    if (getIsLose(state)) {
-      // play sound or show lose modal
-    }
-    if (getIsLose(state) || getIsWon(state)) {
-      yield put(timerStop());
-    } else if (!getTimerStarted(state)) {
-      yield put(timerReset());
-      yield put(timerStart());
-    }
+  yield put(check());
+  yield put(clearHints())
+  const state = yield select();
+  if (getIsWon(state)) {
+    yield put(showModal());
+  }
+  if (getIsLose(state)) {
+    // play sound or show lose modal
+  }
+  if (getIsLose(state) || getIsWon(state)) {
+    yield put(timerStop());
+  } else if (!getTimerStarted(state)) {
+    yield put(timerReset());
+    yield put(timerStart());
   }
 }
 
-export default sweep;
+function* watchSweep() {
+  yield takeLatest(SWEEP, sweep);
+}
+
+export default function* game() {
+  yield all([
+    fork(watchSweep),
+  ]);
+}
