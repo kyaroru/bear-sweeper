@@ -2,8 +2,8 @@
   "name": "bear-sweeper",
   "author": "Chiew Carol",
   "description": "watch out for bear!",
-  "website": "http://www.kyaroru.com/apps",
-  "version": "1.0.1",
+  "website": "http://bearsweeper.kyaroru.com/",
+  "version": "1.0.2",
   "private": true,
   "dependencies": {
     "prop-types": "^15.6.2",
