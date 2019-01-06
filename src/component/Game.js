@@ -117,11 +117,11 @@ class Game extends Component {
     } = this.props;
     const smiley = () => {
       if (isLose) {
-        return <div onClick={newGame}><div style={styles.face}>😭</div></div>;
+        return <div onClick={newGame}><div style={styles.face}>😭</div></div>; // eslint-disable-line
       } if (isWon) {
-        return <div onClick={newGame}><div style={styles.face}>😍</div></div>;
+        return <div onClick={newGame}><div style={styles.face}>😍</div></div>; // eslint-disable-line
       }
-      return <div onClick={newGame}><div style={styles.face}>😏</div></div>;
+      return <div onClick={newGame}><div style={styles.face}>😏</div></div>; // eslint-disable-line
     };
     return (
       <div style={styles.container}>

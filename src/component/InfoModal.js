@@ -61,7 +61,7 @@ class SuccessModal extends Component {
         isOpen={this.props.visible}
         shouldCloseOnOverlayClick={true}
         onRequestClose={() => {
-          dismiss(); // this modal can be dismiss (some cannot dismiss like fingerprint)
+          dismiss();
         }}
         style={styles}
       >
@@ -71,7 +71,7 @@ class SuccessModal extends Component {
         <div style={styles.modalContent}>
           <div style={styles.label}>- Click any tile to start game</div>
           <div style={styles.label}>- Right click a tile to flag/unflag</div>
-          <div style={styles.label}>- To get hint, click the hint icon</div>
+          <div style={styles.label}>- Click the hint icon to safely reveal tile</div>
           <div style={styles.label}>- Click number to reveal neighbour if flag is made</div>
           <div style={styles.label}>- To restart game, press the emoji face :p</div>
           <div style={styles.modalButton}>

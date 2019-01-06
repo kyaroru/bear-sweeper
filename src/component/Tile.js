@@ -107,7 +107,7 @@ class Tile extends Component {
         className={this.props.isHint && 'blink'}
         style={{ ...styles.button, ...backgroundColor() }}
         onClick={this.props.isLose || this.props.isWon ? () => {} : (this.props.flagued ? null : this.props.onPress)}
-        onContextMenu={this.props.flagued ? this.props.unFlagTile : this.props.flagTile}
+        onContextMenu={this.props.isHint ? (e) => { e.preventDefault()} : this.props.flagued ? this.props.unFlagTile : this.props.flagTile}
         disabled={this.props.isLose || this.props.isWon}
       >
         {tile()}

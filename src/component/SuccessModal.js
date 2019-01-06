@@ -62,7 +62,7 @@ class SuccessModal extends Component {
         isOpen={this.props.visible}
         shouldCloseOnOverlayClick={true}
         onRequestClose={() => {
-          dismiss(); // this modal can be dismiss (some cannot dismiss like fingerprint)
+          dismiss();
         }}
         style={styles}
       >
