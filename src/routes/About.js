@@ -30,9 +30,9 @@ const Difficulty = () => (
         <a target="_blank" rel="noopener noreferrer" href="https://itunes.apple.com/us/app/bearsweeper/id1447809603?ls=1&mt=8">
           <img className="appstore-icon" alt="appstore" src={appstore} />
         </a>
-        <a target="_blank" rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.bearsweeper&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1">
+        {/* <a target="_blank" rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.bearsweeper&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1">
           <img className="google-icon"  alt="googleplay" src={googleplay} />
-        </a>
+        </a> */}
       </div>}
       {(process && process.platform === 'win32' || typeof process === 'undefined') &&
         <div>And it is now ported to ReactJS & ElectronJS :p</div>

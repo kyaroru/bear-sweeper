@@ -3,7 +3,7 @@
   "author": "Chiew Carol",
   "description": "watch out for bear!",
   "website": "http://bearsweeper.kyaroru.com/",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "private": true,
   "dependencies": {
     "prop-types": "^15.6.2",
