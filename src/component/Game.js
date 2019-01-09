@@ -145,7 +145,7 @@ class Game extends Component {
             <div style={{ ...this.getHintButton() }} />
           </div>
         </div>
-        <div style={{...styles.board, ...this.getBoardSize()}}>
+        <div style={{...styles.board, width: DEFAULT_CONTAINER_SIZE, height: DEFAULT_CONTAINER_SIZE }}>
           {
             board.map(row => {
               return (

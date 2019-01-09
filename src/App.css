@@ -106,6 +106,16 @@
   }
 }
 
+.zoom-bear {
+  transform: scale(1);
+  transition: 1.5s ease;
+}
+
+.zoom-bear:hover{
+  transform: scale(5);
+  transition: all ease-in-out .5s;
+}
+
 .ReactModal__Overlay {
   z-index: 2;
 }

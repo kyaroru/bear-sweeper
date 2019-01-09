@@ -72,7 +72,7 @@ class Tile extends Component {
     const tile = () => {
       if (this.props.sweeped) {
         if (this.props.isMine) {
-          return <img style={styles.bear} src={images.bear} />;
+          return <img style={styles.bear} src={images.bear} className="zoom-bear" />;
         }
         if (this.props.number > 0) {
           return (
