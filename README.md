@@ -15,29 +15,29 @@ Link to Demo Website: [BearSweeper](https://bearsweeper.kyaroru.com)
 
 ## Prerequisite
 - Install Foreman
-```
+```console
 sudo npm i -g foreman
 ```
 
 ## Clone and Setup
-```
+```console
 git clone https://github.com/kyaroru/bear-sweeper.git
 cd bear-sweeper
 npm i
 ```
 
 ## Start & Run in Browser
-```
+```console
 npm start
 ```
 
 ## Start & Run Electron App
-```
+```console
 npm run start-app
 ```
 
 ## Build & Deploy
-```
+```console
 npm run mas-dev (for MacOS - development version for Mac App Store) --- CERT & PROVISIONING NEEDED
 npm run mas (for MacOS - distribute via Mac App Store) --- CERT & PROVISIONING NEEDED
 npm run dmg (for MacOS - distribute outside Mac App Store)

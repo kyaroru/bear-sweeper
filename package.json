@@ -6,6 +6,10 @@
   "version": "1.0.3",
   "private": true,
   "dependencies": {
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.12.0",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
@@ -18,10 +22,7 @@
     "redux-logger": "^3.0.6",
     "redux-persist": "^5.10.0",
     "redux-saga": "^0.16.2",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.2",
-    "eslint-plugin-react": "^7.12.0"
+    "serve": "^10.1.1"
   },
   "devDependencies": {
     "electron": "^4.0.0",
@@ -29,13 +30,14 @@
   },
   "scripts": {
     "start-app": "nf start -p 3000",
+    "start": "serve -s build",
+    "dev": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "electron": "electron .",
     "electron-start": "node public/start-react",
     "react-start": "BROWSER=none react-scripts start",
-    "start": "react-scripts start",
     "pack-dmg": "electron-builder --dir --mac dmg",
     "pack-mas": "electron-builder --dir --mac mas",
     "pack-win": "electron-builder --dir --win",
@@ -44,7 +46,8 @@
     "mas-dev": "npm run build && electron-builder --mac mas-dev",
     "win": "npm run build && electron-builder --win portable",
     "appx": "npm run build && electron-builder --win appx",
-    "postinstall": "install-app-deps"
+    "postinstall": "install-app-deps",
+    "heroku-postbuild": "npm run build"
   },
   "homepage": "./",
   "main": "public/electron.js",
