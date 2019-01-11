@@ -44,3 +44,8 @@ npm run dmg (for MacOS - distribute outside Mac App Store)
 npm run appx (for Windows - distribute via Windows Store) --- PUBLISHER ACCOUNT NEEDED
 npm run win (for Window - distribute outside Windows store)
 ```
+
+## Available on Mac/Windows
+<a href="https://www.microsoft.com/store/apps/9N72G3W07BZK?ocid=badge"><img src="./src/images/microsoftstore.png" width="100"></a>
+
+<a href="https://itunes.apple.com/my/app/bearsweeper/id1448125669?mt=12"><img src="./src/images/macstore.svg" width="100"></a>
